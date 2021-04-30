@@ -25,8 +25,6 @@ class Generator(nn.Module):
 
     # given a noise tensor return a generated "BERT" embedding
     def forward(self, noise):
-        # noise = self.posencoder(noise)
-        # print(next(self.gen.parameters()).is_cuda)
         return self.gen(noise).to(device)
 
 
@@ -34,4 +32,3 @@ def get_noise(z_dim):
     t = torch.empty(z_dim)
     nn.init.uniform_(t, a=0.0, b=1.0)
     return t.to(device)
-    #return torch.randn(z_dim, device=device)
