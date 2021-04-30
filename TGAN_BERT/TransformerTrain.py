@@ -185,13 +185,10 @@ if __name__ == "__main__":
 
             if cur_step % 2 == 0:
 
-                # batch = batch.to(device)
                 with torch.no_grad():
-                #print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+
                 #print(batch.is_cuda)
                     realEmbedding = model(batch)
-                
-                #realEmbedding = realEmbedding.to(device)
             
                 # Zero out the gradients before backpropagation
                 disc_opt.zero_grad()
@@ -199,7 +196,6 @@ if __name__ == "__main__":
                 # Calculate discriminator loss
                 # disc_loss = get_disc_loss(gen, disc, criterion, realEmbedding, z_dim, realNorms, fakeNorms)
 
-                # print('realEmbedding shape :', realEmbedding.last_hidden_state.flatten().shape)
                 disc_loss = lsgan_disc_adversarial_loss(gen, disc, realEmbedding, z_dim)
                 # disc_loss = hinge_disc_adversarial_loss(gen, disc, realEmbedding, z_dim)
                 
