@@ -7,8 +7,6 @@ import os
 ##################
 
 filepath = '/Users/gilkornberg/Desktop/tasks_1-20_v1-2/en-10k/train/'
-# filepath = '/Users/gilkornberg/Desktop/BERT_GAN/master/master_train.txt'
-
 
 def read_and_clean_file(filename):
     file = open(filename)
@@ -29,10 +27,6 @@ def read_and_clean_file(filename):
                 continue
             else:
                 totalSentence = totalSentence + " " + token
-    # for i in range(len(totalSentenceList)):
-    #     if totalSentenceList[i] != "\n":
-    #         print(totalSentenceList[i])
-
 
 def create_vocab(master_file, vocab):
     file = open(master_file)
@@ -48,7 +42,3 @@ if __name__ == '__main__':
     masterVocab = set()
     for f in os.listdir(filepath):
         read_and_clean_file(filepath + f)
-
-    # for word in masterVocab:
-    #     print(word)
-    #     # read_and_clean_file(filepath + f)
