@@ -1,4 +1,4 @@
-# TGAN-BERT: Generating Realistic BERT Embeddings with Transformer GAN
+# TGAN-BERT: Toward Generating Realistic BERT Embeddings with Transformer GAN
 
 GANs have taken the vision community by storm in recent years. 
 However, this success has not extended to applications in NLP due to the discreteness of language. 
